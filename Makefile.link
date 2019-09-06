@@ -9,17 +9,9 @@
 #############################################################################
 
 # the location of the ti software directory
-TI-SOFTWARE       := C:/ti-software
+RELATIVE          ?= .
+TI-SOFTWARE       := $(RELATIVE)/..
 
-# add Catch
-SEARCH            += $(TI-SOFTWARE)/Catch2/single_include
-
-# include hwlib
+# add hwlib
 HWLIB             ?= $(TI-SOFTWARE)/hwlib
 include           $(HWLIB)/Makefile.inc
-
-# set BMPTK to the bmptk subdirectory
-BMPTK := C:/ti-software/bmptk
-
-# Defer to the bmptk/Makefile.inc to do the work
-include $(BMPTK)/Makefile.inc
