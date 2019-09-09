@@ -1,13 +1,3 @@
-#############################################################################
-#
-# Project Makefile
-#
-# (c) Wouter van Ooijen (www.voti.nl) 2016
-#
-# This file is in the public domain.
-# 
-#############################################################################
-
 SOURCES  += i2c_ipass.cpp
 HEADERS  += i2c_ipass.hpp
 

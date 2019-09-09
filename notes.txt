@@ -1,0 +1,14 @@
+Daan Zimmerman van Woesink - Bluetooth gravity controller voor snake
+David Strootman - 64x32 matrux
+Duur Albas - D&D characters on RFID cards
+David Griffioen - motion pong
+Erik de Zeeuw - gravity breakout
+Faizal Supriadi - gravity matrix display game
+Finn Fonteyn - gravity pong
+Hugo Cornel - waterpas
+jippe heijnen - hourglass 1632
+Jochem van Kranenburg - radio
+Jochem van Weelde - DS2812 library
+Kevin Patists - DS2812 minesweeper
+Lars Looijenga - DS2812 wristband
+Noah Tiarsole - ball maze`
