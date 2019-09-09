@@ -1,29 +1,5 @@
-#############################################################################
-#
-# Project Makefile
-#
-# (c) Wouter van Ooijen (www.voti.nl) 2016
-#
-# This file is in the public domain.
-# 
-#############################################################################
-
-SOURCES  += i2c_ipass.cpp
-HEADERS  += i2c_ipass.hpp
-
-HEADERS  += registers.hpp
-SOURCES  += ADXL345.cpp
-HEADERS  += ADXL345.hpp
-
-SOURCES  += tests.cpp
-HEADERS  += tests.hpp
-
-HEADERS  += line.hpp
-HEADERS  += cube.hpp
-HEADERS  += moving_cube.hpp
-HEADERS  += player.hpp
-
-# set RELATIVE to the next higher directory 
-# and defer to the appropriate Makefile.* there
+SOURCES := spaceinvaders.cpp drawable.cpp rocket.cpp spacealien.cpp spaceship.cpp mpu6050.cpp
+HEADERS := spaceinvaders.hpp drawable.hpp rocket.hpp spacealien.hpp spaceship.hpp mpu6050.hpp 
+SEARCH :=
 RELATIVE := ..
 include $(RELATIVE)/Makefile.due
