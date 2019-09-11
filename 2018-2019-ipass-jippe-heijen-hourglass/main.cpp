@@ -7,6 +7,10 @@
 #   (See accompanying file LICENSE_1_0.txt or copy at        #
 #          https://www.boost.org/LICENSE_1_0.txt)            #
 ##############################################################
+ * 
+ * some small changes markes // wovo
+ * by Wouter van Ooijen to automatically enter 
+ * a demo mode after 10 seconds
 */
 
 #include "matrixLib.hpp"
@@ -275,19 +279,35 @@ int main(){
 	
 	bool menu = true;
 	bool blink = false;
-	int minutes=0;
+	int minutes = 0;
+    
+    // wovo
+    bool demo = false;
 
 	for (;;) {
-		while (!menu)  {
+        
+        // wovo
+        if( demo ){
+            minutes = 1;
+            menu = false;
+        }
+        
+		while (!menu){
 			hourGlass(m, minutes);
 			blink = true;
 			break;
 		}
 		if (blink) {
+            // wovo
+            int n_blink = 0;
+            
 			while (!menubutton.read()) {
 				menubutton.refresh();
 				hwlib::wait_ms(500);
 				m.blink(1);
+                
+                // wovo
+                if( demo) if( ++n_blink > 5 ){ break; }
 			}
 			if (menubutton.read()) {
 				while (menubutton.read()) {
@@ -296,11 +316,18 @@ int main(){
 					menubutton.refresh();
 					hwlib::wait_ms(500);
 				}
-				
 			}
 			
 		}
+        auto menu_end = hwlib::now_us() + 30'000'000;
 		while (menu) {
+            
+            // wovo
+            if( hwlib::now_us() > menu_end ){
+               menu = false;
+               demo = true;
+            }            
+            
 			for (int i=0;i<=100;i++) {
 				win.clear( win.background );
 				winpart_0.write(hwlib::xy(0,0), hwlib::font_default_8x8()['t']);
