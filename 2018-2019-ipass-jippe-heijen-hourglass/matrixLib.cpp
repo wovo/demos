@@ -19,7 +19,7 @@
 
 
 
-matrix::HT_1632::HT_1632(spi::bus spi_bus,
+matrix::HT_1632::HT_1632(spi::bus & spi_bus,
 	uint16_t type):
 	spi_bus(spi_bus),
 	type(type)

@@ -94,7 +94,7 @@ class HT_1632 {
 protected:
 //! \brief This array is the memory-buffer to store data temporarily before it gets written.
 uint16_t ledmatrix[24] = {0};
-spi::bus spi_bus;
+spi::bus & spi_bus;
 uint16_t type;
 
 /*!
@@ -167,7 +167,7 @@ public:
  * same transistors in them. For the one I used HT1632_COMMON_16NMOS seemed to work.
  */
 
-HT_1632(spi::bus spi_bus, uint16_t type);
+HT_1632(spi::bus & spi_bus, uint16_t type);
 
 /*!
 	\brief SetPixel function.

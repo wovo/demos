@@ -282,7 +282,7 @@ int main(){
 	int minutes = 0;
     
     // wovo
-    bool demo = false;
+    bool demo = true;
 
 	for (;;) {
         
